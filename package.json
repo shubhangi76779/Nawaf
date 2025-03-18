@@ -2,9 +2,9 @@
   "name": "sd2-example",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",  
+  "main": "app.js",
   "scripts": {
-    "start": "supervisor app.js",  
+    "start": "supervisor app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -14,6 +14,7 @@
     "express": "^4.21.2",
     "mysql": "^2.18.1",
     "mysql2": "^2.3.0",
+    "pug": "^3.0.3",
     "sqlite3": "^5.0.2",
     "supervisor": "^0.12.0"
   }
