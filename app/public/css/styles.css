@@ -1,4 +1,4 @@
-body {
+/* body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     padding: 20px;
@@ -41,4 +41,39 @@ body {
   #category {
     margin-right: 10px;
   }
-  
+   */
+
+   body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    padding: 20px;
+}
+
+h1 {
+    color: #333;
+}
+
+.user-list {
+    list-style: none;
+    padding: 0;
+}
+
+.user-list li {
+    background: white;
+    padding: 10px;
+    margin: 5px 0;
+    border-left: 4px solid #007bff;
+}
+
+.pagination {
+    margin-top: 20px;
+}
+
+.pagination a {
+    text-decoration: none;
+    padding: 8px 12px;
+    background: #007bff;
+    color: white;
+    margin: 5px;
+    border-radius: 5px;
+}

@@ -1,5 +1,6 @@
 // controllers/userController.js
-const db = require('../db');  
+import db from "../db.js";
+
 
 
 // Fetch user by ID

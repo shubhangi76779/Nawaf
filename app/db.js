@@ -1,6 +1,7 @@
-require("dotenv").config();
+import dotenv from "dotenv";
+import mysql from "mysql2/promise";
 
-const mysql = require('mysql2/promise');
+dotenv.config();
 
 // Access environment variables
 const config = {
@@ -8,7 +9,7 @@ const config = {
     host: process.env.MYSQL_HOST,
     port: process.env.DB_PORT,
     user: process.env.MYSQL_USER,
-    password: process.env.MYSQL_PASS,
+    password: process.env.MYSQL_PASSWORD,
     database: process.env.MYSQL_DATABASE,
     waitForConnections: true,
     connectionLimit: 2,
@@ -19,24 +20,24 @@ const config = {
 const pool = mysql.createPool(config.db);
 
 // Utility function to query the database
-async function query(sql, params) {
-  const [rows, fields] = await pool.execute(sql, params);
+async function query(sql, params = []) {
+  const [rows] = await pool.execute(sql, params);
   return rows;
 }
 
-module.exports = {
-  query,
-};
-
+// Function to test database connection
 async function testConnection() {
   try {
     const connection = await pool.getConnection();
-    console.log('Successfully connected to the database!');
+    console.log("✅ Successfully connected to the database!");
     connection.release();
   } catch (error) {
-    console.error('Database connection failed:', error);
+    console.error("❌ Database connection failed:", error);
   }
 }
 
+// Run test connection
 testConnection();
 
+// ✅ Correct Export for ES Modules
+export default { query };
